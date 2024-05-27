@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grow_app_mobile/screens/welcome_screen.dart';
 
 void main() {
-  runApp(GrowApp());
+  runApp(const GrowApp());
 }
 
 class GrowApp extends StatelessWidget {

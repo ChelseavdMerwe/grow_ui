@@ -8,7 +8,7 @@ class OperatingSystem {
     {
         os = Platform.operatingSystem;
 
-        print('Operating Platform is ${os}');
+        print('Operating Platform is $os');
     }
 }
   

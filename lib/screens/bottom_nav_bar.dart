@@ -3,8 +3,11 @@ import 'package:grow_app_mobile/screens/home_screen.dart';
 import 'package:grow_app_mobile/screens/map_screen.dart';
 import 'package:grow_app_mobile/screens/order_screen.dart';
 import 'package:grow_app_mobile/screens/shop_screen.dart';
+import 'package:grow_app_mobile/screens/produce_screen.dart';
 
   class Wrapper extends StatefulWidget {
+  const Wrapper({Key? key}) : super(key: key);
+
 
   
     @override
@@ -15,10 +18,10 @@ import 'package:grow_app_mobile/screens/shop_screen.dart';
     int _selectedIndex = 0;
 
     final List<Widget>_pageOptions = [
-      HomeScreen(),
-      ShopScreen(),
-      OrderScreen(),
-      MapScreen(),
+      const HomeScreen(),
+      const ProduceScreen(),
+      const OrderScreen(),
+      const MapScreen(),
     ];
 
       static const TextStyle optionStyle =
@@ -59,22 +62,22 @@ import 'package:grow_app_mobile/screens/shop_screen.dart';
             unselectedItemColor: Colors.grey,
             onTap: _onItemTapped,
             currentIndex: _selectedIndex,
-            items:[
-              const BottomNavigationBarItem(
+            items:const [
+              BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                title: Text('Home'),
+                label: 'Home',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.shopping_cart),
-                title: Text('Shop'),
+                label: 'Shop',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.delivery_dining),
-                title: Text('Order'),
+                label: 'Order',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.map),
-                title: Text('Map'),
+                label: 'Map'
               )
             ],
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:grow_app_mobile/widgets/image_slider.dart'; 
 
 class ShopScreen extends StatelessWidget {
   const ShopScreen({Key? key}) : super(key: key);
@@ -8,102 +8,87 @@ class ShopScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("GFG Slider"),
+        title: const Text("GFG Slider"),
       ),
       body: ListView(
-        children: [
-          CarouselSlider(
-            items: [
-              //1st Image of Slider
-              Container(
-                margin: EdgeInsets.all(2.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  // ignore: prefer_const_literals_to_create_immutables
-                  boxShadow: [
-                    const BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(
-                        5.0,
-                        5.0,
-                      ),
-                      blurRadius: 10.0,
-                      spreadRadius: 2.0,
-                    ), //BoxShadow
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: const Offset(0.0, 0.0),
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                    ), //BoxShadow
-                  ],
-                  image: DecorationImage(
-                    image: AssetImage('brocolli.jpg'),
-                    fit: BoxFit.contain,
+        children: const [
+          
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'In season',
+                     style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontFamily: 'Inter'),
+                    ),
                   ),
-                ),
+                  ImageSlider(
+                    images: [
+                      {'url': 'brocolli.jpg', 'name': 'Brocolli'},
+                      {'url': 'chilli.jpg', 'name': 'Chilli'},
+                      {'url': 'garlic.jpg', 'name': 'Garlic'},
+                      {'url': 'peas.jpg', 'name': 'Peas'},
+                      {'url': 'brocolli.jpg', 'name': 'Brocolli'},
+                    ],
+                  ),
+                ],
               ),
-
-              //2nd Image of Slider
-              Container(
-                margin: EdgeInsets.all(2.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: AssetImage('chilli.jpg'),
-                    fit: BoxFit.contain,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Categories',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontFamily: 'Inter'),
+                    ),
                   ),
-                ),
+                  ImageSlider(
+                    images: [
+                      {'url': 'brocolli.jpg', 'name': 'Brocolli'},
+                      {'url': 'chilli.jpg', 'name': 'Chilli'},
+                      {'url': 'garlic.jpg', 'name': 'Garlic'},
+                      {'url': 'peas.jpg', 'name': 'Peas'},
+                      {'url': 'brocolli.jpg', 'name': 'Brocolli'},
+                    ],
+                  ),
+                ],
               ),
-
-              //3rd Image of Slider
-              Container(
-                margin: EdgeInsets.all(2.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: AssetImage('garlic.jpg'),
-                    fit: BoxFit.contain,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'By Store',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontFamily: 'Inter'),
+                    ),
                   ),
-                ),
-              ),
-
-              //4th Image of Slider
-              Container(
-                margin: EdgeInsets.all(2.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: AssetImage('peas.jpg'),
-                    fit: BoxFit.contain,
+                  ImageSlider(
+                    images: [
+                      {'url': 'brocolli.jpg', 'name': 'Brocolli'},
+                      {'url': 'chilli.jpg', 'name': 'Chilli'},
+                      {'url': 'garlic.jpg', 'name': 'Garlic'},
+                      {'url': 'peas.jpg', 'name': 'Peas'},
+                      {'url': 'brocolli.jpg', 'name': 'Brocolli'},
+                    ],
                   ),
-                ),
-              ),
-
-              //5th Image of Slider
-              Container(
-                margin: EdgeInsets.all(2.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: AssetImage('brocolli.jpg'),
-                    fit: BoxFit.contain,
-                  ),
-                ),
+                ],
               ),
             ],
-
-            //Slider Container properties
-            options: CarouselOptions(
-              //height: 180.0,
-              enlargeCenterPage: true,
-              // autoPlay: true,
-              // aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              //autoPlayAnimationDuration: Duration(milliseconds: 800),
-              viewportFraction: 0.8,
-            ),
           ),
         ],
       ),
